@@ -14,7 +14,7 @@ gcloud -q services enable compute.googleapis.com; gcloud -q services enable cont
 #Create Cluster & app
 gcloud -q components install kubectl
 gcloud -q container clusters create vary-demo-1 -z us-central1-b
-kubectl run web-app --image gcr.io/google-samples/hello-app:1.0 --port 8080
+#kubectl run web-app --image gcr.io/google-samples/hello-app:1.0 --port 8080
 
 echo "sleeping 30 seconds to assure app is installed"
  sleep 30
@@ -22,13 +22,13 @@ echo "sleeping 30 seconds to assure app is installed"
 kubectl get pods
 
 #Scaling cluster
-kubectl scale deployment web-app --replicas 3; kubectl get pods
-kubectl expose deployment web-app --port=80 --target-port=8080 --type=LoadBalancer
+#kubectl scale deployment web-app --replicas 3; kubectl get pods
+#kubectl expose deployment web-app --port=80 --target-port=8080 --type=LoadBalancer
 
 echo "sleeping 60"
 sleep 60
 
-kubectl get service web-app
+#kubectl get service web-app
 
 ###How to delete###
 
