@@ -1,0 +1,37 @@
+NAME                                  TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)             AGE
+example-etcd-cluster                  ClusterIP   None         <none>        2379/TCP,2380/TCP   1h
+example-etcd-cluster-client           ClusterIP   10.0.0.23    <none>        2379/TCP            1h
+example-etcd-cluster-client-service   NodePort    10.0.0.203   <none>        2379:32379/TCP      1h
+hello-kenzan                          NodePort    10.0.0.120   <none>        80:30791/TCP        2h
+jenkins                               NodePort    10.0.0.115   <none>        80:32149/TCP        2h
+kr8sswordz                            NodePort    10.0.0.157   <none>        80:31760/TCP        1h
+kubernetes                            ClusterIP   10.0.0.1     <none>        443/TCP             2h
+mongo                                 NodePort    10.0.0.117   <none>        27017:32590/TCP     1h
+monitor-scale                         NodePort    10.0.0.204   <none>        3001:31743/TCP      1h
+nginx                                 NodePort    10.0.0.155   <none>        80:32391/TCP        2h
+puzzle                                NodePort    10.0.0.24    <none>        3000:31172/TCP      1h
+registry                              NodePort    10.0.0.234   <none>        5000:30400/TCP      2h
+registry-ui                           NodePort    10.0.0.194   <none>        8080:32022/TCP      2h
+|-------------|-------------------------------------|-----------------------------|
+|  NAMESPACE  |                NAME                 |             URL             |
+|-------------|-------------------------------------|-----------------------------|
+| default     | example-etcd-cluster                | No node port                |
+| default     | example-etcd-cluster-client         | No node port                |
+| default     | example-etcd-cluster-client-service | http://192.168.99.100:32379 |
+| default     | hello-kenzan                        | http://192.168.99.100:30791 |
+| default     | jenkins                             | http://192.168.99.100:32149 |
+| default     | kr8sswordz                          | http://192.168.99.100:31760 |
+| default     | kubernetes                          | No node port                |
+| default     | mongo                               | http://192.168.99.100:32590 |
+| default     | monitor-scale                       | http://192.168.99.100:31743 |
+| default     | nginx                               | http://192.168.99.100:32391 |
+| default     | puzzle                              | http://192.168.99.100:31172 |
+| default     | registry                            | http://192.168.99.100:30400 |
+| default     | registry-ui                         | http://192.168.99.100:32022 |
+| kube-system | default-http-backend                | http://192.168.99.100:30001 |
+| kube-system | heapster                            | http://192.168.99.100:30779 |
+| kube-system | kube-dns                            | No node port                |
+| kube-system | kubernetes-dashboard                | http://192.168.99.100:30000 |
+| kube-system | monitoring-grafana                  | http://192.168.99.100:31976 |
+| kube-system | monitoring-influxdb                 | No node port                |
+|-------------|-------------------------------------|-----------------------------|
