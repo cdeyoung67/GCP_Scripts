@@ -22,9 +22,9 @@ Kubectl run nginx-chris --image cdeyoung67/vary:varytry --port 80
 kubectl scale deployment nginx-chris --replicas 3; sleep 10; kubectl get pods
 kubectl expose deployment nginx-chris --type LoadBalancer --port 80
 
-kubectl apply -f kubernetes-ci-cd/manifests/registry.yml
-#kubectl expose deployment registry-ui --type LoadBalancer --port 8080
-kubectl expose deployment registry --type=LoadBalancer --name=registry-ui-service
+####kubectl apply -f kubernetes-ci-cd/manifests/registry.yml
+####sleep 60
+####kubectl expose deployment registry --type=LoadBalancer --name=registry-ui-service
 
 
 
