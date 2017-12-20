@@ -15,9 +15,32 @@ gcloud -q services enable compute.googleapis.com; gcloud -q services enable cont
 gcloud -q components install kubectl
 gcloud -q container clusters create vary-demo-1 -z us-central1-b
 #kubectl run web-app --image gcr.io/google-samples/hello-app:1.0 --port 8080
+#kubectl run nginx --image nginx 
+#kubectl scale deployment nginx --replicas 3; kubectl get pods
+#kubectl expose deployment nginx --port=80 --target-port=8080 --type=LoadBalancer
+Kubectl run nginx-chris --image cdeyoung67/vary:secondtry --port 80
+kubectl expose deployment nginx-chris --type LoadBalancer --port 80
 
-echo "sleeping 30 seconds to assure app is installed"
- sleep 30
+
+
+
+
+
+
+
+
+
+echo "Ended Prematurly for test"
+exit
+
+#kubectl expose deployment nginx --type NodePort --port 80
+
+kubectl apply -f kubernetes-ci-cd/manifests/registry.yml
+kubectl rollout status deployments/registry
+
+
+#echo "sleeping 30 seconds to assure app is installed"
+# sleep 30
 
 kubectl get pods
 
@@ -25,12 +48,12 @@ kubectl get pods
 #kubectl scale deployment web-app --replicas 3; kubectl get pods
 #kubectl expose deployment web-app --port=80 --target-port=8080 --type=LoadBalancer
 
-echo "sleeping 60"
-sleep 60
+#echo "sleeping 60"
+#sleep 60
 
 #kubectl get service web-app
 
 ###How to delete###
 
-echo "once demo is complete:   1. kubectl delete services --all  2.  gcloud -q container clusters delete vary-demo-1 --zone us-central1-b"
+echo "once demo is complete:   1. kubectl delete services --all  2.  cloud -q container clusters delete vary-demo-1 --zone us-central1-b"
 echo "to conect to k8s console type kubectl proxy"
