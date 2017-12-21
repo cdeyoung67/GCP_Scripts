@@ -18,13 +18,13 @@ gcloud -q container clusters create vary-demo-1 -z us-central1-b
 #kubectl run nginx --image nginx 
 #kubectl scale deployment nginx --replicas 3; kubectl get pods
 #kubectl expose deployment nginx --port=80 --target-port=8080 --type=LoadBalancer
-Kubectl run nginx-chris --image cdeyoung67/vary:varytry --port 80
+Kubectl run nginx-chris --image cdeyoung67/vary:varytry1 --port 80
 kubectl scale deployment nginx-chris --replicas 3; sleep 10; kubectl get pods
 kubectl expose deployment nginx-chris --type LoadBalancer --port 80
-
-####kubectl apply -f kubernetes-ci-cd/manifests/registry.yml
-####sleep 60
-####kubectl expose deployment registry --type=LoadBalancer --name=registry-ui-service
+sleep 120
+kubectl apply -f kubernetes-ci-cd/manifests/registry.yml
+sleep 120
+kubectl expose deployment registry --type=LoadBalancer --name=registry-ui-service
 
 
 
